@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 
 const UserList = () => {
   const [inputData, setInputData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then((data) => {
         setInputData(data);
+        setLoading(false);
       });
   }, []);
+  if (loading) {
+    return (
+      <div>
+        <div>Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <>

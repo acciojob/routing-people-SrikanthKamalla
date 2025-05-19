@@ -15,7 +15,11 @@ const UserDetails = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <div>Loading...</div>
+      </div>
+    );
   }
   return (
     <>
