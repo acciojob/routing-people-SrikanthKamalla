@@ -13,37 +13,36 @@ const UserDetails = () => {
         setLoading(false);
       });
   }, []);
-
-  if (loading) {
-    return (
-      <div>
-        <div>Loading...</div>
-      </div>
-    );
-  }
   return (
     <>
-      <h1>User Details</h1>
-      <p>
-        <strong>Name: </strong>
-        {userData.name}
-      </p>
-      <p>
-        <strong>Username: </strong>
-        {userData.username}
-      </p>
-      <p>
-        <strong>Email: </strong>
-        {userData.email}
-      </p>
-      <p>
-        <strong>Phone: </strong>
-        {userData.phone}
-      </p>
-      <p>
-        <strong>Website: </strong>
-        {userData.website}
-      </p>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <>
+          <h1>User Details</h1>
+
+          <p>
+            <strong>Name: </strong>
+            {userData.name}
+          </p>
+          <p>
+            <strong>Username: </strong>
+            {userData.username}
+          </p>
+          <p>
+            <strong>Email: </strong>
+            {userData.email}
+          </p>
+          <p>
+            <strong>Phone: </strong>
+            {userData.phone}
+          </p>
+          <p>
+            <strong>Website: </strong>
+            {userData.website}
+          </p>
+        </>
+      )}
     </>
   );
 };

@@ -22,14 +22,20 @@ const UserList = () => {
 
   return (
     <>
-      <h1>User List</h1>
-      <ul>
-        {inputData.map((ele, index) => (
-          <li key={ele.id}>
-            <Link to={`/users/${ele.id}`}>{ele.name}</Link>
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <>
+          <h1>User List</h1>
+          <ul>
+            {inputData.map((ele, index) => (
+              <li key={ele.id}>
+                <Link to={`/users/${ele.id}`}>{ele.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </>
   );
 };
